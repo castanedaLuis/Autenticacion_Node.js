@@ -12,8 +12,9 @@
   "license": "ISC",
   "description": "Proyecto de autenticación con login y password, creado con NODE.js",
   "dependencies": {
-    "express": "4.19.2",
-    "db-local": "^3.1.0"
+    "bcrypt": "^5.1.1",
+    "db-local": "^3.1.0",
+    "express": "4.19.2"
   },
   "devDependencies": {
     "standard": "17.1.0"

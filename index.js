@@ -5,7 +5,15 @@ import { UserRepository } from "./user-repository.js";
 const app = express()
 app.use(express.json())
 
-app.post('/login',(req,res)=>{})
+app.post('/login', async (req,res)=>{
+    const { username, password } = req.body
+    try {
+        const user = await UserRepository.login({username, password})
+        res.json({message:"Login seccesful", user})
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
+})
 
 app.post('/register',(req,res)=>{
     const { username, password } = req.body
